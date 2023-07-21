@@ -22,24 +22,24 @@ router.get("/posts", function (req, res) {
   console.log("Requesting posts");
   post
     .find({}) //finds all posts
-    // .then((posts) => {
-    //   //if succeded do this block of code
-    //   res.json(posts);
-    //   console.log(posts);
-    // })
-    // .catch((err) => {
-    //   //catch error
-    //   console.log("Error getting the posts");
-    // });
-
-  .exec(function (err, posts) {
-    if (err) {
-      console.log('Error getting the posts');
-    } else {
+    .then((posts) => {
+      //if succeded do this block of code
       res.json(posts);
       console.log(posts);
-    }
-  });
+    })
+    .catch((err) => {
+      //catch error
+      console.log("Error getting the posts");
+    });
+
+  // .exec(function (err, posts) {
+  //   if (err) {
+  //     console.log('Error getting the posts');
+  //   } else {
+  //     res.json(posts);
+  //     console.log(posts);
+  //   }
+  // });
 });
 
 module.exports = router;
