@@ -4,6 +4,8 @@ const path = require('path');
 const http = require('http');
 const app = express();
 
+const api = require('./server/routes/api');
+
 // API file for interacting with MongoDB
 //Parsers
 app.use(bodyParser.json());
@@ -14,7 +16,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "dist")));
 
 // Set our api routes
-// app.use("/api", api);
+app.use("/api", api);
 
 // Catch all other routes and return the index file
 app.get("*", (req, res) => {
