@@ -31,15 +31,6 @@ router.get("/posts", function (req, res) {
       //catch error
       console.log("Error getting the posts");
     });
-
-  // .exec(function (err, posts) {
-  //   if (err) {
-  //     console.log('Error getting the posts');
-  //   } else {
-  //     res.json(posts);
-  //     console.log(posts);
-  //   }
-  // });
 });
 
 module.exports = router;
